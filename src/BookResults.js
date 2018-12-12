@@ -48,17 +48,12 @@ class BookResults extends Component {
 
     componentDidMount() {
         this.getData(this.props.authorSubmit);
-        // scrollToElement('.card', {
-        //     offset: -200,
-        //     ease: 'outCube',
-        //     duration: 2000
-        // });
     }
 
     //  first Axios call, setting
     getData = (author) => {
         axios({
-            url: 'http://proxy.hackeryou.com',
+            url: 'https://proxy.hackeryou.com',
             dataResponse: 'json',
             paramsSerializer: function (params) {
                 return Qs.stringify(params, { arrayFormat: 'brackets' })
@@ -231,9 +226,7 @@ class BookResults extends Component {
     }
 
     // a dynamic function for ALL handle clicks using e.target.id to update state
-    onClick = (e) => {
-        console.log(this.state[e.target.id]);
-        
+    onClick = (e) => {        
         this.setState({
             [e.target.id]: !(this.state[e.target.id])
         })  

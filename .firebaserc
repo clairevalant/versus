@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "production": "versvs-2385d"
+  }
+}
