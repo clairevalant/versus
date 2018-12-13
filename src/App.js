@@ -52,7 +52,8 @@ class App extends Component {
             </div>                           
 
           <footer>
-            <p className="corpTitle">SabreHawk <span>&</span> Baggins est. 2018</p>
+            <p>SabreHawk <span>&</span> Baggins est. 2018</p>
+            <p className="attribution">Made with the  <a href="https://www.goodreads.com/">Goodreads</a> API</p>
           </footer>
         </div>
       </Router>

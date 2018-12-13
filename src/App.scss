@@ -25,6 +25,7 @@ html {
 body {
     background: $white;
     font-size: 1.6rem;
+    height: 100%;
 }
 
 
@@ -52,8 +53,8 @@ p {
 .mainHeader {
     text-align: center;
     background: $white;
-    height: 90vh;
-    padding-top: 15%;
+    height: calc(100vh - 58px);
+    padding-top: 10vh;
 
     .introCopy {
         margin-top: 0;
@@ -65,7 +66,6 @@ p {
         font-size: 1.8rem;
         font-family: $text-font;
         display: block;
-        margin: 5% 0;
 
         label {
             font-weight: 700;
@@ -191,7 +191,7 @@ p {
         width: 98%;
         height: 78vh;
         transform-style: preserve-3d;
-        transition: all 1.0s linear;
+        transition: all 0.5s linear;
         text-align: center;
     }
 
@@ -236,12 +236,14 @@ p {
       position: absolute;
       width: 100%;
       height: 100%;
+      transform:rotateY(0deg);
       backface-visibility: hidden;
       border: 1px solid $darkGrey;
       background-image: linear-gradient(to top, #8f8f8f80, white);
     }
 
     .back {
+        backface-visibility: hidden;
       display: block;
       transform: rotateY(180deg);
       box-sizing: border-box;
@@ -288,38 +290,45 @@ p {
         display: block;
         margin: 10% auto 10% auto;
         background: $accentColor;
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         color: $white;
         font-weight: 700;
-        font-size: 1.5rem;
         position: relative;
         transition: box-shadow 0.3s;
-
-            .fa-question {
-                pointer-events: none;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top:65%;
-                font-size: 1.3rem;
-            }
-
-            &:hover {
-                box-shadow: 0px 0px 10px $accentColor;
-            }
-
+        transform:rotateY(0deg);
+        
+        &:hover {
+            box-shadow: 0px 0px 10px $accentColor;
+        }
+        
         p {
+            font-size: 1.2rem;
+            pointer-events: none;
             position: absolute;
-            font-size: 1.7rem;
-            top: 0;
+            top: 6%;
             left: 50%;
             transform: translateX(-50%);
+            width: 100%;
+        }
+        
+        p:last-of-type() {
+            top: 26%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .fa-question {
             pointer-events: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70%;
+            font-size: 1.3rem;
         }
     }
-
+    
     .bookStats {
         //padding: 2% 0;
         text-align: left;
@@ -342,6 +351,8 @@ p {
 
  .hidden {
     display: none;
+    backface-visibility: hidden;
+    transform:rotateY(0deg);
 }
 
 .show {
@@ -357,23 +368,35 @@ p {
     box-shadow: 0px 10px 20px -5px rgba(0,0,0,.8);
     top:0;
     left:7%;
+    backface-visibility: hidden;
 }
 
 
 //FOOTER
 footer {
-    height: 10vh;
+    height:auto;
     background:$darkGrey;
     color: $white;
     font-weight: 700;
     text-align: center;
     font-family: $text-font;
     letter-spacing: 1.7px;
-    padding: 2% 0;
-    width: 100%;
+    //width: 100%;
     font-size: 1.2rem;
-    // position: absolute;
-    // bottom: 0;
+
+    p{
+        padding: 7px 0;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    a {
+        color: $white;
+
+        &:visited {
+            color: $white;
+        }
+    }
 
     span {
         color: $accentColor;
@@ -399,6 +422,30 @@ footer {
         line-height: 1.8;
     }
 
+     .resultContainer .talkScore {
+        width: 85px;
+        height: 85px;
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 475px) {
+     footer p{
+         display: inline-block;
+         padding: 10px 0;
+    }
+
+    footer .attribution {
+        margin-left: 30px;
+    }
+
+    .mainHeader {
+        height: calc(100vh - 35px)
+    }
 }
 
 @media only screen and (min-width: 760px){
@@ -423,11 +470,6 @@ footer {
     input.button{
         width: 20%;
         margin-left: 5%;
-    }
-
-    .resultContainer .talkScore {
-        width: 85px;
-        height: 85px;
     }
 }
 

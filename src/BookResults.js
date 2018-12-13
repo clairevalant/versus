@@ -73,9 +73,9 @@ class BookResults extends Component {
         }).then(res => {      
 
             scrollToElement('.card', {
-                offset: -200,
+                offset: 0,
                 ease: 'outCube',
-                duration: 2000
+                duration: 1500
             });
             
             // array of 20 works by searched author
@@ -258,6 +258,7 @@ class BookResults extends Component {
 
                                 <div className="talkScoreContainer clearfix">
                                     <div className="talkScore" onClick={this.onClick} id="activeThree" value={this.state.activeThree}>
+                                        <p>Talk Score:</p>
                                         <p>{`${this.state.highBook.talkScore}`}</p>
                                         <i className="fas fa-question"></i>
                                     </div>
@@ -293,6 +294,7 @@ class BookResults extends Component {
                                 </div>
                                 <div className="talkScoreContainer clearfix">
                                     <div className={"talkScore"} onClick={this.onClick} id="activeFour">
+                                        <p>Talk Score:</p>
                                         <p>{`${this.state.lowBook.talkScore}`}</p>
                                         <i className="fas fa-question"></i>
                                     </div>
