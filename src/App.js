@@ -30,7 +30,6 @@ class App extends Component {
     })
  
   }
-  
 
   render() {
     return (
@@ -44,7 +43,6 @@ class App extends Component {
             </header>
           
           </div>
-
 
             <div className="wrapper">
               <Route path="/bookresults" render={() => 

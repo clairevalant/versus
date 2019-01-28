@@ -192,7 +192,6 @@ class BookResults extends Component {
             const talkScore = (reviews / ratings * 100).toFixed(2);
 
             // if the book we pass to getDescAndUrl is highBook, then set the whole state of highBook, else set the state of lowBook
-            // CAN WE DO THIS ANOTHER WAY????
             book === this.state.highBook ?
                 this.setState({
                     highBook: {
